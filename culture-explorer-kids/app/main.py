@@ -7,7 +7,7 @@ from utils import choose_background_url, apply_bg_css
 from culture_logic import make_provider
 from auth import login_form, logout_button
 
-st.set_page_config(page_title=UI.app_title, page_icon="🌍", layout="wide")
+st.set_page_config(page_title=UI.app_title, page_icon="🌍", layout="centered")
 styles.base_theme()
 
 st.markdown(f"# {UI.app_title}")
