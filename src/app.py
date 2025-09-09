@@ -149,7 +149,7 @@ if st.session_state["interactive"]:
         prompt = f"Kid asks about {country}: {user_question}\nTone rules: {', '.join(tone_rules)}"
 
         # generate answer (show spinner while waiting)
-        with st.spinner("Thinking..."):
+        with st.toast("Thinking..."):
             answer = asyncio.run(provider.generate(prompt))
             # apply your provider's guardrails
             if hasattr(provider, "apply_guardrails"):
