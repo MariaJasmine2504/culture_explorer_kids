@@ -33,7 +33,7 @@ st.markdown("""
 st.markdown(f"# {UI.app_title}")
 st.markdown(
             f"""
-            Welcome to **{UI.app_title}**!  
+            Welcome little explorer**!  
             Get ready to **explore amazing countries** from the comfort of your screen!
             Discover **fun festivals 🎉, yummy foods 🍲, cool animals 🐼, 
             and exciting stories 📖**.  
