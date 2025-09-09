@@ -33,12 +33,12 @@ st.markdown("""
 st.markdown(f"# {UI.app_title}")
 st.markdown(
             f"""
-            Welcome little explorer**!  
-            Get ready to **explore amazing countries** from the comfort of your screen!
-            Discover **fun festivals 🎉, yummy foods 🍲, cool animals 🐼, 
-            and exciting stories 📖**.  
-            Every click is a new adventure — learn, laugh, and 
-            let your curiosity soar! 🚀  
+            Hey **little explorer**! 🌟  
+            Get ready to **travel the world** right from your screen! 🌍  
+            Discover **lit festivals 🎉, delish foods 🍲, cute animals 🐼,  
+            and epic stories 📖**.  
+            Every click = a new adventure — **learn, laugh, and vibe with curiosity** 🚀✨
+ 
             """
         )
 # --- Auth ---
