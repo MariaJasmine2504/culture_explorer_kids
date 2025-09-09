@@ -168,7 +168,7 @@ if st.session_state["interactive"]:
         clear_placeholder = st.empty()
         with clear_placeholder.container():
             cola, colb, colc, cold, cole, colf, colg,colh,coli = st.columns(9)
-            if coli.button("🧹 ", key="clear_chat", type="primary",help="Clear chat history"):
+            if coli.button("🧹 ", key="clear_chat", type="secondary",help="Clear chat history"):
                 st.session_state["history"] = []
                 st.session_state["interactive"] = False
                 st.rerun()
