@@ -10,8 +10,34 @@ from auth import login_form, logout_button
 st.set_page_config(page_title=UI.app_title, page_icon="🌍", layout="centered")
 styles.base_theme()
 
-st.markdown(f"# {UI.app_title}")
+# 🎨 Inject playful Google Font (Comic Neue as example)
+st.markdown("""
+    <style>
+    @import url('https://fonts.googleapis.com/share?selection.family=Patrick+Hand');
 
+    html, body, [class*="css"]  {
+        font-family: 'Patrick Hand', cursive !important;
+    }
+
+    /* Optional: style buttons a bit rounder */
+    .stButton button {
+        border-radius: 12px;
+        font-size: 1.1rem;
+        padding: 0.5em 1.2em;
+    }
+    </style>
+""", unsafe_allow_html=True)
+
+
+
+st.markdown(f"# {UI.app_title}")
+st.markdown(
+            f"""
+            Welcome to **{UI.app_title}**!  
+            Here you’ll discover **festivals 🎉, foods 🍲, animals 🐼, and stories 📖**  
+            from all around the world.  
+            """
+        )
 # --- Auth ---
 user = st.session_state.get("auth_user") or login_form()
 if not user:
@@ -34,7 +60,7 @@ with st.form("culture_form", clear_on_submit=False):
             value=st.session_state.get("my_culture", "")
         )
 
-    providers = ["ollama", "gemini", "huggingface", "groq"]
+    providers = ["groq"] #"ollama", "gemini", "huggingface", 
     default_provider = st.session_state.get("provider_name", LLM_PROVIDER)
     provider_index = providers.index(default_provider) if default_provider in providers else providers.index(LLM_PROVIDER)
     provider_input = st.selectbox("LLM Provider", providers, index=provider_index)
@@ -60,7 +86,7 @@ provider_name = st.session_state.get("provider_name", LLM_PROVIDER)
 # Apply background for the chosen topic
 keywords = TOPIC_BACKGROUNDS.get(country, None)
 bg_url = choose_background_url(keywords)
-apply_bg_css(bg_url)
+# apply_bg_css(bg_url)
 
 # create provider
 provider = make_provider(provider_name)
@@ -96,8 +122,8 @@ if "interactive" not in st.session_state:
 #         st.session_state["interactive"] = False
 #         st.session_state.pop("history", None)
 #         st.rerun()
-cola,colb,colc,cold,cole = st.columns(5)
-if cole.button("Curious to know more? 🤔", key="curious_button"):
+cola,colb,colc = st.columns(3)
+if colc.button("More curious? 🤔", key="curious_button"):
     st.session_state["interactive"] = True
 
 
@@ -138,7 +164,7 @@ if st.session_state["interactive"]:
         clear_placeholder = st.empty()
         with clear_placeholder.container():
             cola, colb, colc, cold, cole, colf, colg,colh,coli = st.columns(9)
-            if coli.button("🧹 ", key="clear_chat", type="tertiary",help="Clear chat history"):
+            if coli.button("🧹 ", key="clear_chat", type="primary",help="Clear chat history"):
                 st.session_state["history"] = []
                 st.session_state["interactive"] = False
                 st.rerun()
