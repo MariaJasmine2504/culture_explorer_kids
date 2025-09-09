@@ -93,9 +93,13 @@ provider = make_provider(provider_name)
 tone_rules = ["use simple words", "be cheerful", "use emojis"]
 
 # ---------- Immediate attention-grabber ----------
-if my_culture:
+if country and my_culture:
     diff_text = asyncio.run(provider.compare_cultures(my_culture, country, tone_rules))
     about_text = asyncio.run(provider.kid_friendly_guide(country, tone_rules))
+if country and not my_culture:
+    about_text = asyncio.run(provider.kid_friendly_guide(country, tone_rules))
+    diff_text = "Add your own culture in the box above to see how they compare!"
+
 
 col_a, col_b = st.columns([1,1])
 with col_a:
