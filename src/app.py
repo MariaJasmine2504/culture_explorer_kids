@@ -34,8 +34,9 @@ st.markdown(f"# {UI.app_title}")
 st.markdown(
             f"""
             Welcome to **{UI.app_title}**!  
-            Here you’ll discover **festivals 🎉, foods 🍲, animals 🐼, and stories 📖**  
-            from all around the world.  
+            Get ready to **explore amazing countries** from the comfort of your screen! 🌍  
+            Discover **fun festivals 🎉, yummy foods 🍲, cool animals 🐼, and exciting stories 📖**.  
+            Every click is a new adventure — learn, laugh, and let your curiosity soar! 🚀  
             """
         )
 # --- Auth ---
