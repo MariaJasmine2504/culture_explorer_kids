@@ -42,7 +42,8 @@ CHILD_TONE_GUIDELINES = [
 
 @dataclass(frozen=True)
 class UISettings:
-    app_title: str = "🌍 Culture Explorer for Kids"
+    app_title_v1: str = "🌍 Culture Explorer for Kids"
+    app_title: str = "CurioQuest 🧭✨"
     footer_text: str = "Made with ❤️ for curious kids"
     sidebar_title: str = "Explore"
     compare_tab_label: str = "Compare with my culture"
