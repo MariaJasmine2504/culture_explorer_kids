@@ -10,7 +10,7 @@ USERS = {
     "maria": hash_password("secret123")
 }
 # Choose your provider: "ollama", "gemini", "huggingface"
-LLM_PROVIDER: str = "ollama"
+LLM_PROVIDER: str = "groq"
 
 # Model names per provider
 PROVIDER_MODELS = {
