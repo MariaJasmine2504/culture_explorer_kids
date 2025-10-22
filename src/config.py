@@ -5,7 +5,7 @@ import os
 from dotenv import load_dotenv
 
 load_dotenv()
-groq_api_key = os.getenv("CLAUDE_API_KEY")
+groq_api_key = os.getenv("GROQ_API_KEY")
 
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
