@@ -1,6 +1,11 @@
 from dataclasses import dataclass
 from typing import Dict, List
 import hashlib
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+groq_api_key = os.getenv("CLAUDE_API_KEY")
 
 def hash_password(password: str) -> str:
     return hashlib.sha256(password.encode("utf-8")).hexdigest()
@@ -20,7 +25,7 @@ PROVIDER_MODELS = {
     "groq":"llama-3.3-70b-versatile"
 }
 
-GROQ_API_KEY = "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"
+GROQ_API_KEY = groq_api_key
 GROQ_MODEL = "llama-3.3-70b-versatile"
 # Mapping topic -> background keyword (Unsplash search term)
 TOPIC_BACKGROUNDS: Dict[str, List[str]] = {
